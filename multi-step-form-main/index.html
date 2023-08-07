@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Multi-step form</title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            marineBlue: "#06062D",
+            purplishBlue: "#6D29FF",
+            pastelBlue: "#E0FFFF",
+            lightBlue: "#D2F2FF",
+            strawberryRed: '#E3345B',
+            coolGray: "#A2A5A5",
+            lightGray: "#D4D4D4",
+            magnolia: "#F8FCFE",
+            alabaster: "#FCFCFC",
+            white: "#FFFFFF"
+          },
+          backgroundImage: {
+            'imageBack': "url('/assets/images/bg-sidebar-mobile.svg')",
+
+          },
+          spacing: {
+            height4: "65vh"
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* .backGround{
+      background-image: url(/assets/images/bg-sidebar-mobile.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    } */
+
+    /* .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: ; } */
+  </style>
+
+</head>
+
+<body class="h-screen w-screen">
+  <div id="app" class="relative h-full w-full flex flex-col justify-center items-center">
+    <div class="h-full w-full flex flex-col justify-center items-center">
+      <header class="bg-imageBack bg-no-repeat bg-cover bg-center flex flex-col items-center w-full">
+        <div class="py-7 flex justify-around w-48">
+          <p id="1" class="flex justify-center items-center w-8 h-8  border border-black rounded-full">1</p>
+          <p id="2" class="flex justify-center items-center w-8 h-8  border border-black rounded-full">2</p>
+          <p id="3" class="flex justify-center items-center w-8 h-8  border border-black rounded-full">3</p>
+          <p id="4" class="flex justify-center items-center w-8 h-8  border border-black rounded-full">4</p>
+        </div>
+      </header>
+      <main class="h-full w-full bg-[#eef5ff]"></main>
+      <footer class="w-full flex justify-end items-center">
+        <button type="button"
+          class="px-5 py-2 mr-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-marineBlue text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">Next
+          Step</button>
+      </footer>
+    </div>
+    <div class="p-5 mb-24 w-11/12 absolute flex flex-col justify-center items-center bg-white rounded-xl">
+        <h1 class="w-full text-xl font-extrabold text-marineBlue mb-2">Personal info</h1>
+        <p class="text-coolGray font-medium mb-5">Please provide your name, email address, and phone number.</p>
+        <label for="name" class="w-full text-marineBlue"> Name</label>
+        <input id="name" type="text" class="mb-5 py-2 px-3 block w-full border border-coolGray rounded-md text-sm focus:outline-none active:border-marineBlue focus:border-marineBlue focus:ring-marineBlue dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"placeholder="e.g. Stephen King">
+        <label for="email" class="w-full text-marineBlue">Email Address</label>
+        <input id="email" type="email" placeholder="  e.g. stephenking@lorem.com" class="mb-5 py-2 px-3 block w-full border border-coolGray rounded-md text-sm focus:outline-none active:border-marineBlue focus:border-marineBlue focus:ring-marineBlue dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+        <label for="phone" class="w-full text-marineBlue"> Phone Number</label>
+        <input id="phone" type="tel" placeholder=" e.g. +1 234 567 890" class=" mb-5 py-2 px-3 block w-full border border-coolGray rounded-md text-sm focus:outline-none active:border-marineBlue focus:border-marineBlue focus:ring-marineBlue dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const app = Vue.createApp({
+
+      data() {
+        return {
+          para:[
+            { active: true },
+            { active: false },
+            { active: false },
+            { active: false },
+          ]
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
+
+
+
+
+<!-- <section  class="bg-imageBack bg-no-repeat bg-cover bg-center flex flex-col items-center h-44">
+      <div class="py-7 flex justify-around w-48">
+        <p class="flex justify-center items-center w-8 h-8  border border-black rounded-full">1</p>
+        <p class="flex justify-center items-center w-8 h-8  border border-black rounded-full">2</p>
+        <p class="flex justify-center items-center w-8 h-8  border border-black rounded-full">3</p>
+        <p class="flex justify-center items-center w-8 h-8  border border-black rounded-full">4</p>
+      </div>
+    </section>
+    <section class="bg-pastelBlue h-height4">
+      <article class="p-5 absolute top-24 bg-white mx-4 rounded-xl">
+      <h1 class="text-xl font-extrabold text-marineBlue mb-2">Personal info</h1>
+      <p class="text-coolGray font-medium mb-5">Please provide your name, email address, and phone number.</p>
+  
+<label for="name" class="text-marineBlue"> Name</label>
+<input id="name" type="text" class="mb-5 py-2 px-3 block w-full border border-coolGray rounded-md text-sm focus:outline-none active:border-marineBlue focus:border-marineBlue focus:ring-marineBlue dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="e.g. Stephen King">
+
+ 
+<label for="email" class="text-marineBlue">Email Address</label>
+<input id="email" type="email" placeholder="  e.g. stephenking@lorem.com
+" class="mb-5 py-2 px-3 block w-full border border-coolGray rounded-md text-sm focus:outline-none active:border-marineBlue focus:border-marineBlue focus:ring-marineBlue dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+<label for="phone" class="text-marineBlue"> Phone Number</label>
+<input id="phone" type="tel" placeholder=" e.g. +1 234 567 890
+" class=" mb-5 py-2 px-3 block w-full border border-coolGray rounded-md text-sm focus:outline-none active:border-marineBlue focus:border-marineBlue focus:ring-marineBlue dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+</article>
+
+    </section>
+    <section class="flex justify-end pt-3.5">
+      <button type="button" class="px-5 py-2 mr-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-marineBlue text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">
+        Next Step
+      </button>
+    </section> -->
